@@ -1,0 +1,7 @@
+---
+ - name: first playbook 
+   hosts: target
+   tasks: 
+     - name: Verify that server connection works
+       debug: 
+         msg: "hello world!"

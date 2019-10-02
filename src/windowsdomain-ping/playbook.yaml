@@ -1,0 +1,11 @@
+---
+# Sample Playbook 
+ - name: first playbook 
+   hosts: win                                #Host variable containing the list of target host servers
+   tasks: 
+     - name: Ping windows server             #Task1 - pings windows target host server
+       win_ping:                             #Module - pining windows server
+     - name: Create directory structure      #Task2 - Creates a directory structure
+       win_file:                             #Module - Creates, removes files or directories. 
+        path: D:\Temp                        #Path to the file being managed
+        state: directory                     #All immediate subdirectories will be created if they do not exist      

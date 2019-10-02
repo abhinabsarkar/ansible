@@ -1,0 +1,5 @@
+#
+# Connect to nodes as root user.
+#
+ansible_connection: ssh 
+ansible_ssh_user: root
