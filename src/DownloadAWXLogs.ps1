@@ -6,8 +6,8 @@ param
 
 # Initialize
 $apiHost = "https://awx.abs.com"
-$apiJobsUri = "/api/v2/jobs/"
-$apiJobsFilter = "?job_template=" + $jobTemplateId + "&status=failed"
+$apiJobsUri = "/api/v2/jobs/?page_size=100000" #Removing pagination by giving a large value
+$apiJobsFilter = "&job_template=" + $jobTemplateId + "&status=failed"
 $apiFailedJobsUrl = $apiHost + $apiJobsUri + $apiJobsFilter
 
 # Set Headers
@@ -28,7 +28,6 @@ Write-Output "Creating the logs for failed jobs..."
 For ($counter=0; $counter -lt $response.count; $counter++)
 {    
     $logFile = ".\logs\" + $response.results[$counter].id + ".html"
-    # Write-Output $response.results[$counter].id
     Invoke-WebRequest -Uri ($apiHost + $response.results[$counter].url + "stdout/") -Headers $headers -Method Get -OutFile $logFile -Verbose
 }
 Write-Output "Creating the logs for the failed jobs completed successfully"
