@@ -28,3 +28,4 @@ AWX provides a web-based user interface, REST API, and task engine built on top 
 
 Fun with AWX API
 * [Download logs for all the failed jobs for a given job template id](/src/DownloadAWXLogs.ps1)
+* [Download logs for the last 10 failed jobs for a given job template id](/src/DownloadAWXLast10FailedLogs.ps1)
