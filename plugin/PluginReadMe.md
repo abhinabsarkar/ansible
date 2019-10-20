@@ -71,7 +71,7 @@ class CallbackModule(CallbackBase):
   CALLBACK_TYPE = 'aggregate'
   CALLBACK_NAME = 'ab_callback'
 
-def prit_host(self, result, ab_msg):
+def print_host(self, result, ab_msg):
     print(ab_msg)
     print('host name: ' + result._host.get_name())
     print('Error Message: ' + result._result.get('msg'))
